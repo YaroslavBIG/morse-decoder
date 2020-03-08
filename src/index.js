@@ -43,7 +43,7 @@ function decode(expr) {
 
     for(let count = 0; count < exprLen; count += 10){
         expToTenSym.push(expr.slice(count, count + 10));
-    }
+    };
     
     const morse = [];
 
@@ -51,7 +51,7 @@ function decode(expr) {
         const strLen = str.length;
         let morseSym = '';
         if (str === '**********') {
-            morse.push(' ')
+            morse.push(' ');
             continue;
         }
         for (let count = 0; count < strLen; count += 2 ) {
@@ -61,7 +61,8 @@ function decode(expr) {
             }
         }   
        morse.push(morseSym);
-    }
+    };
+
     let result = '';
 
     for(let morseSymb of morse) {
@@ -69,12 +70,12 @@ function decode(expr) {
            result += ' ';
        } else {
        const letter = MORSE_TABLE[morseSymb];
-      // console.log(morseSymb, letter);
        result += letter;
        }
-    }
+    };
+
     return result;
-}
+};
 
 module.exports = {
     decode
